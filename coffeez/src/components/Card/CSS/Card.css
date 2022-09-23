@@ -1,0 +1,33 @@
+.card{
+    width: 40rem;
+    height: 50rem;
+    border-radius: 1.5rem;
+    background: white;
+
+}
+
+.card_figure{
+    height: 80%;
+    width: 100%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+.card_figure img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+
+}
+
+.card_section{
+    height: 20%;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 2rem;
+
+
+
+}

@@ -1,0 +1,28 @@
+.section{
+    padding-bottom: 4rem;
+
+}
+
+.section_header{
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    color: #eeeeee;
+    font-size: 6rem;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.section_h2{
+
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+
+}
+.section_wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
