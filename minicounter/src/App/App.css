@@ -11,8 +11,17 @@ html{
 
 }
 body{
-    height: 100vh;
+    min-height: 100vh;
     font-size: 1rem;
     background: linear-gradient( #0E918C, #F6830F);
 
  }
+.app-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    min-height: 100vh;
+    flex-wrap: wrap;
+
+}

@@ -3,10 +3,12 @@ import CounterCard from "../Components/CounterCard/JS/CounterCard";
 
 const App = () => {
     return(
-        <>
+        <section className="app-section">
 
-            <CounterCard />
-        </>
+            <CounterCard  />
+            <CounterCard  />
+
+        </section>
     );
 }
 
