@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+.todo{
+
+    min-height: 60rem;
+    width: 40rem;
+    box-shadow: 1rem 1rem 3rem 0 rgba(0, 0, 0, 0.4);
+    border-radius: 2.5rem;
+}
+
+.todo-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.todo-header{
+    height: 20%;
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    align-items: center;
+    font-size: 4.5rem;
+    padding: 3rem;
+
+}
+
+.todo-list{
+
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+.todo-item{
+    list-style: none;
+    padding: 2rem;
+    border-bottom: 0.1rem solid rgba(0,0,0,0.4);
+
+
+}
+.todo-item:hover{
+    background: hsl(0,0%,75%);
+    cursor: pointer;
+}
+.todo-item-done{
+    transition: 0.2s;
+    text-decoration: line-through;
+}
