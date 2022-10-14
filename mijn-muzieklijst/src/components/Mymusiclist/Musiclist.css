@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .todo{
 
     min-height: 60rem;
@@ -7,6 +7,7 @@
     border-radius: 2.5rem;
     display: flex;
     flex-direction: column;
+
 }
 
 .todo-section{
@@ -14,11 +15,13 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .todo-header{
     height: 20%;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Lexend Deca', sans-serif;
     display: flex;
     align-items: center;
     font-size: 4.5rem;

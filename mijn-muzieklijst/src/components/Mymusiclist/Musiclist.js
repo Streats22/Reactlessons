@@ -1,9 +1,9 @@
 import Items from "../item/Items";
 import Input from "../input/Input";
-import "./To-do.css";
+import "./Musiclist.css";
 import React from "react";
 import { tasksObject } from "../../data/tasks";
-class Todo extends React.Component{
+class MusicList extends React.Component{
 
     constructor(props) {
         super(props);
@@ -27,9 +27,9 @@ class Todo extends React.Component{
         let tempArray = this.state.tasks;
         let combindedArray = tempArray.concat([
             {
-            name: "todo afmaken",
-            done: false,
-            id: 10,
+                name: "test",
+                done: false,
+                id: 10,
             }
         ]);
         this.setState({
@@ -40,9 +40,23 @@ class Todo extends React.Component{
         let toBeAdded = [{
             name: inputFromInputComponent,
             done: false,
+            genre: "hip-hop",
             id: this.state.tasks.length + 1,
         }]
+
         let mergedArray = this.state.tasks.concat(toBeAdded);
+        this.setState({
+            tasks: mergedArray,
+        })
+    }
+    mouseClick = (inputFromButton) =>{
+        let ButtonsSubmit = [{
+            name: inputFromButton,
+            done: false,
+            genre: "hip-hop",
+            id: this.state.tasks.length + 1,
+        }]
+        let mergedArray = this.state.tasks.concat(ButtonsSubmit);
         this.setState({
             tasks: mergedArray,
         })
@@ -51,20 +65,21 @@ class Todo extends React.Component{
 
         let items = this.state.tasks.map(task => {
             return <Items done={task.done} name={task.name} key={task.id}> </Items>
-                });
-    return(
-        <section className="todo-section">
-            <article  className="todo">
-                <header className="todo-header">
-                    <h1>Things todo:</h1>
-                </header>
-                <ul className="todo-list">
-                {items}
-                </ul>
-                <Input inputPressedEnter={this.inputPressedEnter} />
-            </article>
-        </section>
-    )
+        });
+        return(
+            <section className="todo-section">
+                <article  className="todo">
+                    <header className="todo-header">
+                        <h1>{this.props.title}</h1>
+                    </header>
+                    <ul className="todo-list">
+                        {items}
+                    </ul>
+                    <Input inputPressedEnter={this.inputPressedEnter} />
+
+                </article>
+            </section>
+        )
+    }
 }
-}
-export default Todo;
+export default MusicList;

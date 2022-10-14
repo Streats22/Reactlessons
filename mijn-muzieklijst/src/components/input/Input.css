@@ -1,0 +1,14 @@
+.input{
+    margin: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 100%;
+
+
+}
+.Button{
+    margin: 4rem;
+    background: blue;
+    color: white;
+    font-size: 100%;
+    padding: 2rem;
+}
