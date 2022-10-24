@@ -1,0 +1,160 @@
+.pokemonCard{
+    width: 40rem;
+    height: 50rem;
+    box-shadow: 0 0 2rem rgba(0,0,0,0.2);
+    border-radius: 2rem;
+    padding: 2rem;
+
+}
+.pokemonCard-header{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.pokemonCard-title{
+    font-size: 200%;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.pokemonCard-labelWrapper{
+    gap: 0.5rem;
+    display: flex;
+}
+.pokemonCard-type{
+    font-size: 70%;
+    background: yellow;
+    padding: 0.2rem;
+    border-radius: 1.5rem;
+    width: 8rem;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+.pokemonCard-section{
+    height: 70%;
+}
+
+.pokemonCard-footer{
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.pokemonCard-button{
+    border: none;
+    background: none;
+    font-size: 100%;
+    padding: 0.5rem 2rem;
+    color: white;
+    flex-grow: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+.pokemonCard-button-attack{
+    background: #CF0A0A;
+}
+
+.pokemonCard-button-catch{
+    background: #59CE8F;
+}
+.pokemonCard-section figure{
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pokemonCard-ability{
+    font-size: 60%;
+    font-weight: 400;
+}
+
+.pokemonCard-img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.pokemonCard-HP{
+    font-weight: 600;
+    font-size: 90%;
+}
+
+.pokemonCard-hp-ability{
+    height: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemonCard-type-Water{
+    background: #1D1CE5;
+}
+.pokemonCard-type-Ground{
+    background: #683531;
+}
+
+.pokemonCard-type-Fairy{
+    background: #C7004C;
+}
+
+.pokemonCard-type-Normal{
+    background: #e0dede;
+}
+.pokemonCard-type-Fighting{
+    background: #FABC74;
+}
+
+.pokemonCard-type-Fire{
+    background: #DF7861;
+}
+.pokemonCard-type-Electric{
+    background: #ffd24c;
+}
+.pokemonCard-type-Ice{
+    background: #A0E4F1;
+}
+.pokemonCard-type-Steel{
+    background: #E1CEB5;
+}
+.pokemonCard-type-Dragon{
+    background: #000249;
+}
+
+.pokemonCard-type-Grass{
+    background: #96BB7C;
+}
+.pokemonCard-type-Poison{
+    background: #533483;
+}
+.pokemonCard-type-Flying{
+    background: #92b4ec;
+}
+.pokemonCard-type-Psychic{
+    background: #E94560;
+}
+.pokemonCard-type-Ghost{
+    background: #314357;
+}
+.pokemonCard-type-Dark{
+    background: #480032;
+}
+.pokemonCard-type-Rock{
+    background: #D36B00;
+}
+.pokemonCard-type-Bug{
+    background: #90B77D;
+}
+
+@media screen and (max-width: 62.5rem){
+    .pokemonCard{
+        width: 100%;
+
+    }
+}
+

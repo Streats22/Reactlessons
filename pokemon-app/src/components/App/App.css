@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: 2rem;
+  font-family: 'Silkscreen', cursive;
+  padding: 4rem;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+@media screen and (max-width: 62.5rem){
+  .main{
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0.5rem
+  }
+}
