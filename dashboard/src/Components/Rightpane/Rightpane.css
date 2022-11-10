@@ -59,18 +59,19 @@
 
 }
 
-.productList-item:hover, .productlist-button:hover, .productsList-img:hover{
+.productList-item:hover, .productlist-button:hover{
     filter: hue-rotate(-50deg);
-    border-radius: 4rem;
+    border-radius: 2.5rem;
     cursor: pointer;
 
 }
+
 
 .productsList-img{
     object-fit: cover;
     height: 100%;
     width: 100%;
-    border-radius: 1rem;
+    border-radius: 1.4rem;
     transition: 0.2s all;
 }
 .productsList-img-sub{
@@ -84,4 +85,10 @@
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
+
+}
+.productsList-img:hover, .productsList-img-sub:hover {
+    border-radius: 4rem;
+    background:none;
+    cursor: pointer;
 }
