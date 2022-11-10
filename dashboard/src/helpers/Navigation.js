@@ -2,6 +2,7 @@ const Navigation =             [
     {
         name: "Home",
         message: 0,
+        key: 1,
     },
     {
         name: "Invoices",
