@@ -1,66 +1,138 @@
+import React from "react";
 import Rightpane from "../Rightpane/Rightpane";
 import Leftpane from "../Leftpane/Leftpane";
+import Popup from "../popup/Popup";
 import "./Dashboard.css";
+import pokemon from "../../img/pokeball.jpg";
+import cola from "../../img/coca-cola.jpg";
+import milk from "../../img/milkl.jpg";
+import watch from "../../img/Watch.jpg";
+import phone from "../../img/phone.jpg";
 
 
-const Dashboard = () =>{
-    let navigtionlistitems =
-        [
+class Dashboard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {ProductCards: [], open:true};
+    }
+    onButtonClick = () => {
+        this.setState({open: !this.state.open});
+
+    }
+
+    componentDidMount(){
+      let ProductCards =[
             {
-                name: "Home",
-                message: 0,
+                name: "Cola",
+                img: cola,
+
+
             },
             {
-                name: "Invoices",
-                message: 0,
+                name:"pokemon",
+                img: pokemon,
+
+
             },
             {
-                name: "Orders",
-                message: 3,
+                name:"placeholder",
+
             },
+
+        ];
+      this.setState({ProductCards: ProductCards})
+
+    }
+
+    addButtonClick = (inputFromPopup) =>{
+        let tobeAddedImg;
+        switch (inputFromPopup) {
+            case("Pokemon"):
+                tobeAddedImg = pokemon;
+                break;
+            case("Phone"):
+                tobeAddedImg = phone;
+                break;
+            case("Watch"):
+                tobeAddedImg = watch;
+                break;
+            case("Milk"):
+                tobeAddedImg = milk;
+                break;
+            case("Cola"):
+                tobeAddedImg = cola;
+                break;
+            default:
+                tobeAddedImg = phone;
+                break;
+        }
+        let toBeAdded = [
             {
-                name: "Returns",
-                message: 1,
-            },
-            {
-                name: "Contact",
-                message: 2,
-
-            },
+                name: inputFromPopup,
+                img: tobeAddedImg,
+            }
 
 
-    ];
-    let ButtonText = "Go Premium";
+        ]
+        let mergedArrays = this.state.ProductCards.concat(toBeAdded);
+        this.setState({
+            ProductCards: mergedArrays,
+            open: !this.state.open,
+        })
+    }
 
-    let ProductCards =[
-        {
-            name: "flowers",
-
-
-        },
-        {
-            name:"placeholder",
+    render(){
 
 
-        },
-        {
-            name:"placeholder",
-            img: ""
-        },
 
-    ];
-    return(
+        let navigtionlistitems =
+            [
+                {
+                    name: "Home",
+                    message: 0,
+                },
+                {
+                    name: "Invoices",
+                    message: 0,
+                },
+                {
+                    name: "Orders",
+                    message: 3,
+                },
+                {
+                    name: "Returns",
+                    message: 1,
+                },
+                {
+                    name: "Contact",
+                    message: 2,
 
-      <>
-          <article className="dashboard-section">
+                },
 
-             <Leftpane navigtionlistitems={navigtionlistitems}  ButtonText={ButtonText}/>
-              <Rightpane ProductCards={ProductCards} headerText="My dashboard" buttonText="Add a Product" buttonSymbol="+">
 
-              </Rightpane>
-          </article>
-      </>
-    );
+            ];
+        if(this.state.open === true){
+            return(
+
+                <>
+                    <article className="dashboard-section">
+                        <Leftpane navigtionlistitems={navigtionlistitems}  ButtonText={this.ButtonText}/>
+                        <Rightpane onButtonClick={this.onButtonClick} ProductCards={this.state.ProductCards} headerText="My dashboard" buttonText="Add a Product" buttonSymbol="+">
+                        </Rightpane>
+                    </article>
+                </>
+            );
+        }
+        return(
+            <>
+                <Popup addButtonClick={this.addButtonClick} />
+            </>
+        );
+    }
+
+     ButtonText = "Go Premium";
+
+
 
 }
 

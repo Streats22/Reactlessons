@@ -1,7 +1,7 @@
 .dashboard-section{
     width: 100%;
     background: #16213E;
-    height: 80vh;
+    min-height: 80vh;
     display: grid;
     grid-template-columns: 30% 70%;
     border-radius: 2rem;
