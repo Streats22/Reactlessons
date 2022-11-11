@@ -10,16 +10,22 @@ import "./Dashboard.css";
 import NavigationObject from "../../helpers/Navigation";
 import productObject from "../Data/Products";
 import chooseImage from "../../helpers/ChooseImage";
+import navigation from "../../helpers/Navigation";
+import Products from "../Data/Products";
 /*End of imports*/
 
 
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {ProductCards: [], open: true};
+        this.state = {ProductCards: [],
+            open: true,
+            cardClicked: {},
+            editMode: false,
+        };
     }
 
-    onButtonClick = () => {
+    onButtonClick = (inputFromPopup) => {
         this.setState({open: !this.state.open});
 
     }
@@ -37,7 +43,7 @@ class Dashboard extends React.Component {
         {
             name: inputFromPopup,
             img: imgFromHelper,
-            key: this.state.ProductCards.length +1,
+            id: this.state.ProductCards.length + 1,
         }
 
 
@@ -50,14 +56,51 @@ class Dashboard extends React.Component {
         })
     }
 
-    onCardClicked = () =>{
-        console.log("test")
+    onCardClicked = (IdFromCard) =>{
+        if(this.state.ProductCards[IdFromCard -1].name === "placeholder"){
+            this.setState({
+                editMode: false,
+            });
+        }
+        else{
+            this.setState({
+                editMode: true,
+            });
+        }
+
+        this.setState({
+
+            open: !this.state.open,
+            cardClicked: this.state.ProductCards[IdFromCard -1],
+        });
+
+       this.setState({
+           open: !this.state.open,
+           cardClicked: this.state.ProductCards[IdFromCard - 1],
+           }
+       );
     }
+
+    editButtonClicked = (inputFromPopup) =>{
+        let productCards = this.state.ProductCards;
+        let newStates = productCards.map(product => {
+            if(this.state.cardClicked.id === product.id){
+                product.name = inputFromPopup;
+                return product;
+            } else{
+                return product;
+            }        });
+        this.setState({ productCards: newStates, open:true});
+
+    }
+
 
     ButtonText = "Go Premium";
 
     render(){
         let navigtionlistitems = NavigationObject.Navigation;
+
+        console.log('help',navigtionlistitems)
 
         if(this.state.open === true){
             return(
@@ -65,7 +108,7 @@ class Dashboard extends React.Component {
                 <>
                     <article className="dashboard-section">
                         <Leftpane navigtionlistitems={navigtionlistitems}  ButtonText={this.ButtonText}/>
-                        <Rightpane onCardClicked={this.onCardClicked} onButtonClick={this.onButtonClick} ProductCards={this.state.ProductCards} headerText="My dashboard" buttonText="Add a Product" buttonSymbol="+">
+                        <Rightpane onProductCardClicked={this.onCardClicked} onButtonClick={this.onButtonClick} ProductCards={this.state.ProductCards} headerText="My dashboard" buttonText="Add a Product" buttonSymbol="+">
                         </Rightpane>
                     </article>
                 </>
@@ -73,7 +116,7 @@ class Dashboard extends React.Component {
         }
         return(
             <>
-                <Popup addButtonClick={this.addButtonClick} />
+                <Popup editButtonClicked={this.editButtonClicked}  editMode={this.state.editMode} cardClicked={this.state.cardClicked} addButtonClick={this.addButtonClick} />
             </>
         );
     }
