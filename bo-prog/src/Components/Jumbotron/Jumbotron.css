@@ -1,0 +1,27 @@
+.jumbotron{
+    height: 80%;
+    width: 100%;
+    background-image: url("https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    color: white;
+
+}
+
+.login-button-jumbo{
+    color: #eeeeee;
+    background: blue;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 4rem;
+    font-size: 1.6rem;
+    transition: all 0.4s;
+}
+.jumbotron p, .jumbotron h2 {
+
+    text-shadow: black 1rem 2rem 5rem;
+}

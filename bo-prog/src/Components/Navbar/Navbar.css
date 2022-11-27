@@ -1,0 +1,55 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+.login-button-nav{
+    color: #eeeeee;
+    background: blue;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 4rem;
+    font-size: 1.6rem;
+    transition: all 0.4s;
+}
+
+.nav-logo{
+    color: #eeeeee;
+    background: black;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+}
+.iphone-nav{
+    color: white;
+    font-size: 2rem;
+}
+
+.links-nav{
+    display: flex;
+    justify-content: center;
+    color: black;
+    gap: 6rem;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+}
+
+.link-nav{
+    color: black;
+}
+
+.link-nav a:hover{
+    border-bottom: blue 0.2rem solid;
+}
+
+.login-button-nav:hover{
+    background: navy;
+    color: white;
+    border-radius: 0.8rem;
+}
